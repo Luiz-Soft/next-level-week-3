@@ -16,7 +16,7 @@ return(
 <img src={mapMarkerImg} alt="Happy" />
 <h2>Escolha um orfanato no mapa</h2>
 <p>Muitas crianças estão
-esperando a sua visita</p>
+esperando a sua visita</p> 
        
        <footer>
            <strong>Recife</strong>
