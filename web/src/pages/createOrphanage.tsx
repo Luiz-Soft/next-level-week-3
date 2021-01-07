@@ -1,5 +1,5 @@
 import React, { ChangeEvent, FormEvent, useState } from "react";
-import { Map} from "react-leaflet"
+import { Map } from "react-leaflet"
 import { Marker, TileLayer } from 'react-leaflet';
 import { LeafletMouseEvent } from 'leaflet';
 import { useHistory } from 'react-router-dom';
@@ -18,7 +18,7 @@ import '../styles/pages/create-orphanage.css';
 export default function OrphanagesMap() {
   const history = useHistory();
 
-  const [position, setPosition] = useState({ latitude: 0, longitude: 0})
+  const [position, setPosition] = useState({ latitude: 0, longitude: 0 })
 
   const [name, setName] = useState('');
   const [about, setAbout] = useState('');
@@ -58,7 +58,7 @@ export default function OrphanagesMap() {
 
     const { latitude, longitude } = position;
 
-    const data =  new FormData();
+    const data = new FormData();
 
     data.append('name', name);
     data.append('about', about);
@@ -72,7 +72,7 @@ export default function OrphanagesMap() {
       data.append('images', image);
     });
 
-   //await api.post('orphanages', data);
+    //await api.post('orphanages', data);
 
     alert('Cadastro realizado com sucesso!');
 
@@ -80,7 +80,7 @@ export default function OrphanagesMap() {
   }
 
   return (
-      
+
     <div id="page-create-orphanage">
       <Sidebar />
       <main>
@@ -89,15 +89,15 @@ export default function OrphanagesMap() {
             <legend>Dados</legend>
 
             <Map
-              center={[-27.2092052,-49.6401092]}
+              center={[-27.2092052, -49.6401092]}
               style={{ width: '100%', height: 280 }}
               zoom={15}
               onClick={handleMapClick}            >
-               <TileLayer 
+              <TileLayer
                 url={`https://api.mapbox.com/styles/v1/mapbox/light-v10/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoibWlndWVsaHAzNzMiLCJhIjoiY2tnNzE1MnptMDJ2NzJwanh4MGUxcHllMyJ9.G05-Q0BxD75MOCFG5uk9yw`}
               />
 
-              { position.latitude !== 0 && (
+              {position.latitude !== 0 && (
                 <Marker
                   interactive={false}
                   icon={mapIcon}
@@ -136,9 +136,10 @@ export default function OrphanagesMap() {
                 <label htmlFor="image[]" className="new-image">
                   <FiPlus size={24} color="#15b6d6" />
                 </label>
+
               </div>
 
-              <input multiple onChange={handleSelectImages} type="file" id="image[]"/>
+              <input multiple onChange={handleSelectImages} type="file" id="image[]" />
             </div>
           </fieldset>
 

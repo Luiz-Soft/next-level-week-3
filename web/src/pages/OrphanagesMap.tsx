@@ -26,7 +26,7 @@ interface Orphanage {
     instructions: string;
     opening_houirs: string;
     open_on_weekends: string;
-
+    id: number;
 };
 
 
@@ -34,8 +34,13 @@ interface Orphanage {
 
 function OrphanagesMap() {
 
-    const params = useParams<OrphanageParams>();
-    const [orphanage, setOrphanage] = useState<Orphanage>();
+    const [orphanages, setOrphanages] = useState<Orphanage[]>([]);
+    useEffect(() => {
+        api.get("/orphanages").then(({ data }) => {
+            setOrphanages(data);
+        });
+    }, []);
+
     return (
 
         <div id="page-map">
