@@ -8,7 +8,7 @@ import { FiPlus } from "react-icons/fi";
 
 import Sidebar from '../components/Sidebar';
 import mapIcon from '../utils/mapIcon';
-//import api from '../services/api';
+import api from '../services/api';
 
 import '../styles/pages/create-orphanage.css';
 
@@ -72,7 +72,7 @@ export default function OrphanagesMap() {
       data.append('images', image);
     });
 
-    //await api.post('orphanages', data);
+    await api.post('orphanages', data);
 
     alert('Cadastro realizado com sucesso!');
 
