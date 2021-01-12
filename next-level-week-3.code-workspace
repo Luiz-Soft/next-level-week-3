@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../tabela-de-permissoes"
+		}
+	],
+	"settings": {
+		"git.ignoreLimitWarning": true
+	}
+}
